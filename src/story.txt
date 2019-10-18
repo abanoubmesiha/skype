@@ -1,0 +1,31 @@
+---skype: reacts' point of view---
+
+sidebar have users :
+        which have ids as keys and each one have an object of infos
+        and have onClick attribute to change the state
+
+main have 3 components header chat msgs and sendMessage
+    every msg is an object
+    sendMessage will create objects so it is automatically enrolls due to it's properities
+
+---skype: redux's point of view---
+
+sidebar user click:
+        onClick attribute, function handleUserClick, dispatch an action setActiveUserId,
+        value from action creator,reducer check and change the state through the combinereducers 
+
+the main chooses from two components if certain state object become true: renders ChatWindow or false 
+        ChatWindow have header and chat msgs and msg imput
+            chat msgs take prop as msgs array by lodash and renders it
+        msg input take typing from state as props from parent ChatWindow and handleChange it
+        and handleSubmit is as handle user click
+
+
+---skype: state management ---
+userid is the key for every thing
+        access user by id
+        messages object main controller is the userid
+        when you click the user it returns the userid so you can take the return and make your
+            future choices depending on it
+
+every msg has key and if it is user's msg and the text itself
